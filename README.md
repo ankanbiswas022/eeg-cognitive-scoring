@@ -138,4 +138,4 @@ PhysioNet: https://physionet.org/content/eegmat/1.0.0/ (ODC-BY 1.0).
 ## Author
 
 Ankan Biswas — PhD (Neuroscience), IISc Bengaluru. EEG / LFP / closed-loop neurofeedback;
-papers in *Imaging Neuroscience*, *EJN*, *eNeuro*. [Google Scholar](https://scholar.google.com/citations?user=oG28KRIAAAAJ) · [LinkedIn](https://www.linkedin.com/in/ankan-biswas-45357685/)
+papers in *Imaging Neuroscience*, *EJN*, *eNeuro*. ankanbiswas0804@gmail.com · [Google Scholar](https://scholar.google.com/citations?user=oG28KRIAAAAJ) · [LinkedIn](https://www.linkedin.com/in/ankan-biswas-45357685/)
