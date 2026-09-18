@@ -18,13 +18,38 @@ EDF ──> MNE preprocessing ──> 4-s windows ──> ~300 interpretable fea
 
 ## Results (subject-wise 6-fold CV, 36 subjects)
 
-RESULTS_TABLE
+| model | OOF AUC [95 % CI] | balanced acc. | recording AUC | recording acc. |
+|---|---|---|---|---|
+| **LightGBM on baseline-relative features** (champion) | **0.915** [0.887, 0.941] | 0.83 | **0.982** | **0.917** |
+| LightGBM on absolute features (ablation) | 0.745 [0.666, 0.816] | 0.70 | 0.781 | 0.750 |
+| EEGNet on raw windows (challenger) | 0.858 [0.804, 0.906] | 0.77 | 0.913 | 0.833 |
+| late fusion (mean of probabilities) | 0.929 | | | |
 
-Numbers are out-of-fold over all windows; CI is a subject-level cluster bootstrap. See
+Recording-level label permutation test: null max 0.58, p = 1/21. Brier 0.135 → 0.115
+after isotonic calibration. Whole run (features, three CV sweeps, 20 permutations, SHAP,
+final fits): 11 min on a laptop CPU.
+
+Numbers are out-of-fold over all 2045 scored windows; balanced and recording accuracies are
+after calibration; CI is a subject-level cluster bootstrap. See
 [artifacts/metrics.json](artifacts/metrics.json) and [reports/](reports/) for the full
 breakdown, SHAP tables and scalp maps.
 
-TOPOMAPS
+**The result that matters: score relative to the person's own baseline.** The first run
+on absolute features reached AUC ~0.6 on 12 subjects, with SHAP pointing at absolute power
+at Fp1, i.e. subject identity and eye artefact. Z-scoring every feature against a 60-s
+eyes-closed calibration segment from the same person (disjoint from the scored windows)
+is what lifts the model to 0.92, and the service enforces that contract: no baseline, no
+score. Details and the ablation in [docs/DESIGN.md](docs/DESIGN.md#9-the-decision-that-mattered-most-score-relative-to-the-persons-own-baseline).
+
+**A caveat, stated up front.** The top SHAP features are gamma and delta power at frontal
+and temporal sites. In an effortful eyes-closed arithmetic task those bands are as likely
+to carry jaw/forehead EMG and eye movement as cortical oscillations, so the score partly
+reflects physiological effort. That is legitimate for a load/stress product but it is not
+a pure cortical marker; mitigations are listed in [docs/MODEL_CARD.md](docs/MODEL_CARD.md).
+
+<p align="center">
+<img src="reports/topomap_all.png" width="30%"> <img src="reports/topomap_theta_logpow.png" width="30%"> <img src="reports/topomap_alpha_relpow.png" width="30%">
+</p>
 
 ## Quick start
 
@@ -45,15 +70,33 @@ python scripts/score_example.py data/raw/eegmat/Subject05_2.edf
 Example response from `POST /score`:
 
 ```json
-EXAMPLE_RESPONSE
+{
+  "score": 95.7,
+  "score_iqr": [89.5, 95.9],
+  "n_windows": 30,
+  "fraction_confident_windows": 1.0,
+  "label": "high_load",
+  "confidence": "high",
+  "quality_flags": [],
+  "window_scores": [97.8, 95.9, 97.8, 95.9, 95.7, 89.6, "..."],
+  "windows_rejected": 0,
+  "baseline_windows": 29,
+  "drift": {"status": "ok", "top": [{"feature": "hjorth_complexity_T5", "mean_shift_z": 3.5}, "..."]},
+  "model_version": "0.1.0",
+  "latency_ms": 488.7
+}
 ```
+
+The request carries `data` (the recording to score) and either `baseline` (a separate
+eyes-closed rest array) or `baseline_seconds` (use the first N seconds of `data` as
+calibration). Without a baseline the service returns 422 rather than a misleading score.
 
 ## What is in the box
 
 | Module | Purpose |
 |---|---|
 | `eegscore.data` / `preprocess` | EDF loading, notch/band-pass, average reference, resampling, window quality gates. One code path for training and serving. |
-| `eegscore.features` | Multitaper band powers (abs/rel), load ratios (θ/α, β/α, engagement), frontal alpha asymmetry, aperiodic 1/f slope & offset, spectral entropy, Hjorth, alpha-band PLV. |
+| `eegscore.features` | Multitaper band powers (abs/rel), load ratios (θ/α, β/α, engagement), frontal alpha asymmetry, aperiodic 1/f slope & offset, spectral entropy, Hjorth, alpha-band PLV. `BaselineStats` z-scores everything against the person's own calibration windows. |
 | `eegscore.models.classical` | scikit-learn pipeline (impute → scale → LightGBM or logistic regression). Champion. |
 | `eegscore.models.deep` | EEGNet, dilated TCN, BiGRU on raw windows with a scikit-learn-like wrapper. Challenger. |
 | `eegscore.validation` | `GroupKFold` by subject, recording-level metrics, subject bootstrap CI, recording-level permutation test. |
@@ -61,7 +104,7 @@ EXAMPLE_RESPONSE
 | `eegscore.scoring` | Isotonic calibration on out-of-fold probabilities → 0–100 score, IQR, confidence, label. |
 | `eegscore.monitoring` | Signal-quality flags (flat, saturated, mains, channel count) and PSI feature drift vs. training reference. |
 | `eegscore.serve.app` | FastAPI: `/health`, `/model`, `/score` (JSON array), `/score/edf` (file upload). |
-| `tests/` | 17 tests on synthetic EEG: feature sanity, leakage guard, model round-trip, calibration, drift, API. |
+| `tests/` | 18 tests on synthetic EEG: feature sanity, leakage guard, baseline normalisation, model round-trip, calibration, drift, API. |
 
 ## Design choices worth arguing about
 

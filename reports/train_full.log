@@ -1,0 +1,320 @@
+12:38:09 INFO eegscore.data: Subject00 baseline -> 29 windows (0 rejected)
+12:38:09 INFO eegscore.data: Subject00 rest     -> 29 windows (0 rejected)
+12:38:09 INFO eegscore.data: Subject00 task     -> 30 windows (0 rejected)
+12:38:09 INFO eegscore.data: Subject01 baseline -> 29 windows (0 rejected)
+12:38:10 INFO eegscore.data: Subject01 rest     -> 20 windows (9 rejected)
+12:38:10 INFO eegscore.data: Subject01 task     -> 22 windows (8 rejected)
+12:38:10 INFO eegscore.data: Subject02 baseline -> 29 windows (0 rejected)
+12:38:10 INFO eegscore.data: Subject02 rest     -> 25 windows (4 rejected)
+12:38:10 INFO eegscore.data: Subject02 task     -> 30 windows (0 rejected)
+12:38:11 INFO eegscore.data: Subject03 baseline -> 27 windows (2 rejected)
+12:38:11 INFO eegscore.data: Subject03 rest     -> 29 windows (0 rejected)
+12:38:11 INFO eegscore.data: Subject03 task     -> 30 windows (0 rejected)
+12:38:11 INFO eegscore.data: Subject04 baseline -> 29 windows (0 rejected)
+12:38:11 INFO eegscore.data: Subject04 rest     -> 21 windows (8 rejected)
+12:38:11 INFO eegscore.data: Subject04 task     -> 30 windows (0 rejected)
+12:38:12 INFO eegscore.data: Subject05 baseline -> 29 windows (0 rejected)
+12:38:12 INFO eegscore.data: Subject05 rest     -> 29 windows (0 rejected)
+12:38:12 INFO eegscore.data: Subject05 task     -> 30 windows (0 rejected)
+12:38:12 INFO eegscore.data: Subject06 baseline -> 29 windows (0 rejected)
+12:38:12 INFO eegscore.data: Subject06 rest     -> 29 windows (0 rejected)
+12:38:12 INFO eegscore.data: Subject06 task     -> 30 windows (0 rejected)
+12:38:13 INFO eegscore.data: Subject07 baseline -> 29 windows (0 rejected)
+12:38:13 INFO eegscore.data: Subject07 rest     -> 29 windows (0 rejected)
+12:38:13 INFO eegscore.data: Subject07 task     -> 28 windows (2 rejected)
+12:38:13 INFO eegscore.data: Subject08 baseline -> 29 windows (0 rejected)
+12:38:13 INFO eegscore.data: Subject08 rest     -> 29 windows (0 rejected)
+12:38:13 INFO eegscore.data: Subject08 task     -> 30 windows (0 rejected)
+12:38:14 INFO eegscore.data: Subject09 baseline -> 29 windows (0 rejected)
+12:38:14 INFO eegscore.data: Subject09 rest     -> 27 windows (2 rejected)
+12:38:14 INFO eegscore.data: Subject09 task     -> 30 windows (0 rejected)
+12:38:14 INFO eegscore.data: Subject10 baseline -> 29 windows (0 rejected)
+12:38:14 INFO eegscore.data: Subject10 rest     -> 29 windows (0 rejected)
+12:38:14 INFO eegscore.data: Subject10 task     -> 30 windows (0 rejected)
+12:38:14 INFO eegscore.data: Subject11 baseline -> 29 windows (0 rejected)
+12:38:14 INFO eegscore.data: Subject11 rest     -> 29 windows (0 rejected)
+12:38:15 INFO eegscore.data: Subject11 task     -> 30 windows (0 rejected)
+12:38:15 INFO eegscore.data: Subject12 baseline -> 27 windows (2 rejected)
+12:38:15 INFO eegscore.data: Subject12 rest     -> 18 windows (11 rejected)
+12:38:15 INFO eegscore.data: Subject12 task     -> 30 windows (0 rejected)
+12:38:15 INFO eegscore.data: Subject13 baseline -> 29 windows (0 rejected)
+12:38:15 INFO eegscore.data: Subject13 rest     -> 29 windows (0 rejected)
+12:38:15 INFO eegscore.data: Subject13 task     -> 30 windows (0 rejected)
+12:38:16 INFO eegscore.data: Subject14 baseline -> 27 windows (2 rejected)
+12:38:16 INFO eegscore.data: Subject14 rest     -> 29 windows (0 rejected)
+12:38:16 INFO eegscore.data: Subject14 task     -> 25 windows (5 rejected)
+12:38:16 INFO eegscore.data: Subject15 baseline -> 29 windows (0 rejected)
+12:38:16 INFO eegscore.data: Subject15 rest     -> 29 windows (0 rejected)
+12:38:16 INFO eegscore.data: Subject15 task     -> 28 windows (2 rejected)
+12:38:16 INFO eegscore.data: Subject16 baseline -> 29 windows (0 rejected)
+12:38:17 INFO eegscore.data: Subject16 rest     -> 29 windows (0 rejected)
+12:38:17 INFO eegscore.data: Subject16 task     -> 30 windows (0 rejected)
+12:38:17 INFO eegscore.data: Subject17 baseline -> 29 windows (0 rejected)
+12:38:17 INFO eegscore.data: Subject17 rest     -> 29 windows (0 rejected)
+12:38:17 INFO eegscore.data: Subject17 task     -> 30 windows (0 rejected)
+12:38:17 INFO eegscore.data: Subject18 baseline -> 29 windows (0 rejected)
+12:38:17 INFO eegscore.data: Subject18 rest     -> 29 windows (0 rejected)
+12:38:18 INFO eegscore.data: Subject18 task     -> 30 windows (0 rejected)
+12:38:18 INFO eegscore.data: Subject19 baseline -> 29 windows (0 rejected)
+12:38:18 INFO eegscore.data: Subject19 rest     -> 29 windows (0 rejected)
+12:38:18 INFO eegscore.data: Subject19 task     -> 30 windows (0 rejected)
+12:38:18 INFO eegscore.data: Subject20 baseline -> 29 windows (0 rejected)
+12:38:18 INFO eegscore.data: Subject20 rest     -> 27 windows (2 rejected)
+12:38:18 INFO eegscore.data: Subject20 task     -> 30 windows (0 rejected)
+12:38:19 INFO eegscore.data: Subject21 baseline -> 29 windows (0 rejected)
+12:38:19 INFO eegscore.data: Subject21 rest     -> 29 windows (0 rejected)
+12:38:19 INFO eegscore.data: Subject21 task     -> 30 windows (0 rejected)
+12:38:19 INFO eegscore.data: Subject22 baseline -> 27 windows (2 rejected)
+12:38:19 INFO eegscore.data: Subject22 rest     -> 29 windows (0 rejected)
+12:38:19 INFO eegscore.data: Subject22 task     -> 30 windows (0 rejected)
+12:38:20 INFO eegscore.data: Subject23 baseline -> 29 windows (0 rejected)
+12:38:20 INFO eegscore.data: Subject23 rest     -> 29 windows (0 rejected)
+12:38:20 INFO eegscore.data: Subject23 task     -> 30 windows (0 rejected)
+12:38:20 INFO eegscore.data: Subject24 baseline -> 29 windows (0 rejected)
+12:38:20 INFO eegscore.data: Subject24 rest     -> 29 windows (0 rejected)
+12:38:20 INFO eegscore.data: Subject24 task     -> 30 windows (0 rejected)
+12:38:20 INFO eegscore.data: Subject25 baseline -> 29 windows (0 rejected)
+12:38:20 INFO eegscore.data: Subject25 rest     -> 29 windows (0 rejected)
+12:38:21 INFO eegscore.data: Subject25 task     -> 26 windows (4 rejected)
+12:38:21 INFO eegscore.data: Subject26 baseline -> 29 windows (0 rejected)
+12:38:21 INFO eegscore.data: Subject26 rest     -> 29 windows (0 rejected)
+12:38:21 INFO eegscore.data: Subject26 task     -> 28 windows (2 rejected)
+12:38:21 INFO eegscore.data: Subject27 baseline -> 29 windows (0 rejected)
+12:38:21 INFO eegscore.data: Subject27 rest     -> 29 windows (0 rejected)
+12:38:21 INFO eegscore.data: Subject27 task     -> 30 windows (0 rejected)
+12:38:21 INFO eegscore.data: Subject28 baseline -> 29 windows (0 rejected)
+12:38:21 INFO eegscore.data: Subject28 rest     -> 29 windows (0 rejected)
+12:38:21 INFO eegscore.data: Subject28 task     -> 30 windows (0 rejected)
+12:38:21 INFO eegscore.data: Subject29 baseline -> 29 windows (0 rejected)
+12:38:22 INFO eegscore.data: Subject29 rest     -> 29 windows (0 rejected)
+12:38:22 INFO eegscore.data: Subject29 task     -> 30 windows (0 rejected)
+12:38:22 INFO eegscore.data: Subject30 baseline -> 29 windows (0 rejected)
+12:38:22 INFO eegscore.data: Subject30 rest     -> 29 windows (0 rejected)
+12:38:22 INFO eegscore.data: Subject30 task     -> 30 windows (0 rejected)
+12:38:22 INFO eegscore.data: Subject31 baseline -> 29 windows (0 rejected)
+12:38:22 INFO eegscore.data: Subject31 rest     -> 9 windows (0 rejected)
+12:38:22 INFO eegscore.data: Subject31 task     -> 30 windows (0 rejected)
+12:38:22 INFO eegscore.data: Subject32 baseline -> 29 windows (0 rejected)
+12:38:22 INFO eegscore.data: Subject32 rest     -> 29 windows (0 rejected)
+12:38:23 INFO eegscore.data: Subject32 task     -> 30 windows (0 rejected)
+12:38:23 INFO eegscore.data: Subject33 baseline -> 29 windows (0 rejected)
+12:38:23 INFO eegscore.data: Subject33 rest     -> 29 windows (0 rejected)
+12:38:23 INFO eegscore.data: Subject33 task     -> 30 windows (0 rejected)
+12:38:23 INFO eegscore.data: Subject34 baseline -> 29 windows (0 rejected)
+12:38:23 INFO eegscore.data: Subject34 rest     -> 29 windows (0 rejected)
+12:38:23 INFO eegscore.data: Subject34 task     -> 30 windows (0 rejected)
+12:38:23 INFO eegscore.data: Subject35 baseline -> 29 windows (0 rejected)
+12:38:23 INFO eegscore.data: Subject35 rest     -> 29 windows (0 rejected)
+12:38:23 INFO eegscore.data: Subject35 task     -> 30 windows (0 rejected)
+12:38:24 INFO eegscore.data: dataset: 2045 scored + 1036 baseline windows | 19 ch x 1000 samples @ 250 Hz | 36 subjects | positive fraction 0.52
+12:38:41 INFO eegscore.train: features: (2045, 297) (baseline_relative=True)
+12:38:41 INFO eegscore.train: == feature model (lightgbm), 6-fold subject-wise CV
+12:38:42 INFO eegscore.validation: fold 0 AUC 0.966  bAcc 0.882  (subjects [10, 14, 19, 26, 28, 35])
+12:38:42 INFO eegscore.validation: fold 1 AUC 0.903  bAcc 0.792  (subjects [4, 8, 18, 20, 27, 34])
+12:38:43 INFO eegscore.validation: fold 2 AUC 0.907  bAcc 0.786  (subjects [6, 12, 15, 17, 24, 33])
+12:38:43 INFO eegscore.validation: fold 3 AUC 0.945  bAcc 0.845  (subjects [1, 5, 9, 16, 23, 32])
+12:38:43 INFO eegscore.validation: fold 4 AUC 0.929  bAcc 0.811  (subjects [3, 7, 13, 22, 30, 31])
+12:38:44 INFO eegscore.validation: fold 5 AUC 0.849  bAcc 0.733  (subjects [0, 2, 11, 21, 25, 29])
+12:38:46 INFO eegscore.train: feature model: OOF AUC 0.915 [0.887, 0.941]  bAcc 0.807  recording AUC 0.982  recording acc 0.875
+12:38:46 INFO eegscore.validation: fold 0 AUC 0.825  bAcc 0.767  (subjects [10, 14, 19, 26, 28, 35])
+12:38:46 INFO eegscore.validation: fold 1 AUC 0.738  bAcc 0.704  (subjects [4, 8, 18, 20, 27, 34])
+12:38:47 INFO eegscore.validation: fold 2 AUC 0.811  bAcc 0.715  (subjects [6, 12, 15, 17, 24, 33])
+12:38:47 INFO eegscore.validation: fold 3 AUC 0.798  bAcc 0.789  (subjects [1, 5, 9, 16, 23, 32])
+12:38:47 INFO eegscore.validation: fold 4 AUC 0.660  bAcc 0.611  (subjects [3, 7, 13, 22, 30, 31])
+12:38:48 INFO eegscore.validation: fold 5 AUC 0.690  bAcc 0.611  (subjects [0, 2, 11, 21, 25, 29])
+12:38:50 INFO eegscore.train: ablation (absolute features): OOF AUC 0.745 [0.666, 0.816]  bAcc 0.699  recording AUC 0.781  recording acc 0.750
+12:38:50 INFO eegscore.validation: fold 0 AUC 0.966  bAcc 0.882  (subjects [10, 14, 19, 26, 28, 35])
+12:38:50 INFO eegscore.validation: fold 1 AUC 0.903  bAcc 0.792  (subjects [4, 8, 18, 20, 27, 34])
+12:38:51 INFO eegscore.validation: fold 2 AUC 0.907  bAcc 0.786  (subjects [6, 12, 15, 17, 24, 33])
+12:38:51 INFO eegscore.validation: fold 3 AUC 0.945  bAcc 0.845  (subjects [1, 5, 9, 16, 23, 32])
+12:38:51 INFO eegscore.validation: fold 4 AUC 0.929  bAcc 0.811  (subjects [3, 7, 13, 22, 30, 31])
+12:38:51 INFO eegscore.validation: fold 5 AUC 0.849  bAcc 0.733  (subjects [0, 2, 11, 21, 25, 29])
+12:38:52 INFO eegscore.validation: fold 0 AUC 0.670  bAcc 0.632  (subjects [10, 14, 19, 26, 28, 35])
+12:38:52 INFO eegscore.validation: fold 1 AUC 0.261  bAcc 0.354  (subjects [4, 8, 18, 20, 27, 34])
+12:38:52 INFO eegscore.validation: fold 2 AUC 0.430  bAcc 0.445  (subjects [6, 12, 15, 17, 24, 33])
+12:38:53 INFO eegscore.validation: fold 3 AUC 0.420  bAcc 0.454  (subjects [1, 5, 9, 16, 23, 32])
+12:38:53 INFO eegscore.validation: fold 4 AUC 0.506  bAcc 0.508  (subjects [3, 7, 13, 22, 30, 31])
+12:38:53 INFO eegscore.validation: fold 5 AUC 0.423  bAcc 0.457  (subjects [0, 2, 11, 21, 25, 29])
+12:38:53 INFO eegscore.validation: fold 0 AUC 0.440  bAcc 0.429  (subjects [10, 14, 19, 26, 28, 35])
+12:38:54 INFO eegscore.validation: fold 1 AUC 0.418  bAcc 0.460  (subjects [4, 8, 18, 20, 27, 34])
+12:38:54 INFO eegscore.validation: fold 2 AUC 0.437  bAcc 0.461  (subjects [6, 12, 15, 17, 24, 33])
+12:38:54 INFO eegscore.validation: fold 3 AUC 0.349  bAcc 0.369  (subjects [1, 5, 9, 16, 23, 32])
+12:38:55 INFO eegscore.validation: fold 4 AUC 0.455  bAcc 0.495  (subjects [3, 7, 13, 22, 30, 31])
+12:38:55 INFO eegscore.validation: fold 5 AUC 0.527  bAcc 0.514  (subjects [0, 2, 11, 21, 25, 29])
+12:38:55 INFO eegscore.validation: fold 0 AUC 0.501  bAcc 0.510  (subjects [10, 14, 19, 26, 28, 35])
+12:38:55 INFO eegscore.validation: fold 1 AUC 0.430  bAcc 0.462  (subjects [4, 8, 18, 20, 27, 34])
+12:38:56 INFO eegscore.validation: fold 2 AUC 0.531  bAcc 0.514  (subjects [6, 12, 15, 17, 24, 33])
+12:38:56 INFO eegscore.validation: fold 3 AUC 0.426  bAcc 0.460  (subjects [1, 5, 9, 16, 23, 32])
+12:38:56 INFO eegscore.validation: fold 4 AUC 0.216  bAcc 0.288  (subjects [3, 7, 13, 22, 30, 31])
+12:38:57 INFO eegscore.validation: fold 5 AUC 0.530  bAcc 0.552  (subjects [0, 2, 11, 21, 25, 29])
+12:38:57 INFO eegscore.validation: fold 0 AUC 0.444  bAcc 0.482  (subjects [10, 14, 19, 26, 28, 35])
+12:38:57 INFO eegscore.validation: fold 1 AUC 0.303  bAcc 0.372  (subjects [4, 8, 18, 20, 27, 34])
+12:38:57 INFO eegscore.validation: fold 2 AUC 0.479  bAcc 0.496  (subjects [6, 12, 15, 17, 24, 33])
+12:38:58 INFO eegscore.validation: fold 3 AUC 0.454  bAcc 0.459  (subjects [1, 5, 9, 16, 23, 32])
+12:38:58 INFO eegscore.validation: fold 4 AUC 0.425  bAcc 0.481  (subjects [3, 7, 13, 22, 30, 31])
+12:38:58 INFO eegscore.validation: fold 5 AUC 0.325  bAcc 0.373  (subjects [0, 2, 11, 21, 25, 29])
+12:38:59 INFO eegscore.validation: fold 0 AUC 0.278  bAcc 0.355  (subjects [10, 14, 19, 26, 28, 35])
+12:38:59 INFO eegscore.validation: fold 1 AUC 0.386  bAcc 0.401  (subjects [4, 8, 18, 20, 27, 34])
+12:38:59 INFO eegscore.validation: fold 2 AUC 0.431  bAcc 0.417  (subjects [6, 12, 15, 17, 24, 33])
+12:38:59 INFO eegscore.validation: fold 3 AUC 0.339  bAcc 0.391  (subjects [1, 5, 9, 16, 23, 32])
+12:39:00 INFO eegscore.validation: fold 4 AUC 0.464  bAcc 0.466  (subjects [3, 7, 13, 22, 30, 31])
+12:39:00 INFO eegscore.validation: fold 5 AUC 0.384  bAcc 0.440  (subjects [0, 2, 11, 21, 25, 29])
+12:39:00 INFO eegscore.validation: fold 0 AUC 0.427  bAcc 0.446  (subjects [10, 14, 19, 26, 28, 35])
+12:39:01 INFO eegscore.validation: fold 1 AUC 0.487  bAcc 0.480  (subjects [4, 8, 18, 20, 27, 34])
+12:39:01 INFO eegscore.validation: fold 2 AUC 0.365  bAcc 0.383  (subjects [6, 12, 15, 17, 24, 33])
+12:39:01 INFO eegscore.validation: fold 3 AUC 0.327  bAcc 0.364  (subjects [1, 5, 9, 16, 23, 32])
+12:39:01 INFO eegscore.validation: fold 4 AUC 0.524  bAcc 0.502  (subjects [3, 7, 13, 22, 30, 31])
+12:39:02 INFO eegscore.validation: fold 5 AUC 0.379  bAcc 0.411  (subjects [0, 2, 11, 21, 25, 29])
+12:39:02 INFO eegscore.validation: fold 0 AUC 0.306  bAcc 0.363  (subjects [10, 14, 19, 26, 28, 35])
+12:39:02 INFO eegscore.validation: fold 1 AUC 0.448  bAcc 0.459  (subjects [4, 8, 18, 20, 27, 34])
+12:39:03 INFO eegscore.validation: fold 2 AUC 0.523  bAcc 0.526  (subjects [6, 12, 15, 17, 24, 33])
+12:39:03 INFO eegscore.validation: fold 3 AUC 0.396  bAcc 0.421  (subjects [1, 5, 9, 16, 23, 32])
+12:39:03 INFO eegscore.validation: fold 4 AUC 0.331  bAcc 0.353  (subjects [3, 7, 13, 22, 30, 31])
+12:39:04 INFO eegscore.validation: fold 5 AUC 0.493  bAcc 0.511  (subjects [0, 2, 11, 21, 25, 29])
+12:39:04 INFO eegscore.validation: fold 0 AUC 0.404  bAcc 0.428  (subjects [10, 14, 19, 26, 28, 35])
+12:39:04 INFO eegscore.validation: fold 1 AUC 0.532  bAcc 0.525  (subjects [4, 8, 18, 20, 27, 34])
+12:39:04 INFO eegscore.validation: fold 2 AUC 0.526  bAcc 0.533  (subjects [6, 12, 15, 17, 24, 33])
+12:39:05 INFO eegscore.validation: fold 3 AUC 0.414  bAcc 0.465  (subjects [1, 5, 9, 16, 23, 32])
+12:39:05 INFO eegscore.validation: fold 4 AUC 0.484  bAcc 0.447  (subjects [3, 7, 13, 22, 30, 31])
+12:39:05 INFO eegscore.validation: fold 5 AUC 0.528  bAcc 0.541  (subjects [0, 2, 11, 21, 25, 29])
+12:39:06 INFO eegscore.validation: fold 0 AUC 0.588  bAcc 0.565  (subjects [10, 14, 19, 26, 28, 35])
+12:39:06 INFO eegscore.validation: fold 1 AUC 0.537  bAcc 0.515  (subjects [4, 8, 18, 20, 27, 34])
+12:39:06 INFO eegscore.validation: fold 2 AUC 0.532  bAcc 0.528  (subjects [6, 12, 15, 17, 24, 33])
+12:39:07 INFO eegscore.validation: fold 3 AUC 0.583  bAcc 0.560  (subjects [1, 5, 9, 16, 23, 32])
+12:39:07 INFO eegscore.validation: fold 4 AUC 0.470  bAcc 0.486  (subjects [3, 7, 13, 22, 30, 31])
+12:39:07 INFO eegscore.validation: fold 5 AUC 0.317  bAcc 0.391  (subjects [0, 2, 11, 21, 25, 29])
+12:39:07 INFO eegscore.validation: fold 0 AUC 0.583  bAcc 0.581  (subjects [10, 14, 19, 26, 28, 35])
+12:39:08 INFO eegscore.validation: fold 1 AUC 0.437  bAcc 0.443  (subjects [4, 8, 18, 20, 27, 34])
+12:39:08 INFO eegscore.validation: fold 2 AUC 0.649  bAcc 0.622  (subjects [6, 12, 15, 17, 24, 33])
+12:39:08 INFO eegscore.validation: fold 3 AUC 0.555  bAcc 0.539  (subjects [1, 5, 9, 16, 23, 32])
+12:39:09 INFO eegscore.validation: fold 4 AUC 0.499  bAcc 0.525  (subjects [3, 7, 13, 22, 30, 31])
+12:39:09 INFO eegscore.validation: fold 5 AUC 0.564  bAcc 0.549  (subjects [0, 2, 11, 21, 25, 29])
+12:39:09 INFO eegscore.validation: fold 0 AUC 0.441  bAcc 0.476  (subjects [10, 14, 19, 26, 28, 35])
+12:39:10 INFO eegscore.validation: fold 1 AUC 0.375  bAcc 0.448  (subjects [4, 8, 18, 20, 27, 34])
+12:39:10 INFO eegscore.validation: fold 2 AUC 0.615  bAcc 0.584  (subjects [6, 12, 15, 17, 24, 33])
+12:39:10 INFO eegscore.validation: fold 3 AUC 0.387  bAcc 0.421  (subjects [1, 5, 9, 16, 23, 32])
+12:39:10 INFO eegscore.validation: fold 4 AUC 0.414  bAcc 0.414  (subjects [3, 7, 13, 22, 30, 31])
+12:39:11 INFO eegscore.validation: fold 5 AUC 0.394  bAcc 0.444  (subjects [0, 2, 11, 21, 25, 29])
+12:39:11 INFO eegscore.validation: fold 0 AUC 0.576  bAcc 0.564  (subjects [10, 14, 19, 26, 28, 35])
+12:39:11 INFO eegscore.validation: fold 1 AUC 0.439  bAcc 0.429  (subjects [4, 8, 18, 20, 27, 34])
+12:39:12 INFO eegscore.validation: fold 2 AUC 0.507  bAcc 0.506  (subjects [6, 12, 15, 17, 24, 33])
+12:39:12 INFO eegscore.validation: fold 3 AUC 0.555  bAcc 0.544  (subjects [1, 5, 9, 16, 23, 32])
+12:39:12 INFO eegscore.validation: fold 4 AUC 0.566  bAcc 0.551  (subjects [3, 7, 13, 22, 30, 31])
+12:39:13 INFO eegscore.validation: fold 5 AUC 0.717  bAcc 0.655  (subjects [0, 2, 11, 21, 25, 29])
+12:39:13 INFO eegscore.validation: fold 0 AUC 0.435  bAcc 0.481  (subjects [10, 14, 19, 26, 28, 35])
+12:39:13 INFO eegscore.validation: fold 1 AUC 0.446  bAcc 0.484  (subjects [4, 8, 18, 20, 27, 34])
+12:39:13 INFO eegscore.validation: fold 2 AUC 0.665  bAcc 0.635  (subjects [6, 12, 15, 17, 24, 33])
+12:39:14 INFO eegscore.validation: fold 3 AUC 0.607  bAcc 0.603  (subjects [1, 5, 9, 16, 23, 32])
+12:39:14 INFO eegscore.validation: fold 4 AUC 0.531  bAcc 0.516  (subjects [3, 7, 13, 22, 30, 31])
+12:39:14 INFO eegscore.validation: fold 5 AUC 0.669  bAcc 0.644  (subjects [0, 2, 11, 21, 25, 29])
+12:39:15 INFO eegscore.validation: fold 0 AUC 0.321  bAcc 0.399  (subjects [10, 14, 19, 26, 28, 35])
+12:39:15 INFO eegscore.validation: fold 1 AUC 0.432  bAcc 0.457  (subjects [4, 8, 18, 20, 27, 34])
+12:39:15 INFO eegscore.validation: fold 2 AUC 0.319  bAcc 0.393  (subjects [6, 12, 15, 17, 24, 33])
+12:39:16 INFO eegscore.validation: fold 3 AUC 0.425  bAcc 0.418  (subjects [1, 5, 9, 16, 23, 32])
+12:39:16 INFO eegscore.validation: fold 4 AUC 0.239  bAcc 0.295  (subjects [3, 7, 13, 22, 30, 31])
+12:39:16 INFO eegscore.validation: fold 5 AUC 0.425  bAcc 0.459  (subjects [0, 2, 11, 21, 25, 29])
+12:39:16 INFO eegscore.validation: fold 0 AUC 0.465  bAcc 0.515  (subjects [10, 14, 19, 26, 28, 35])
+12:39:17 INFO eegscore.validation: fold 1 AUC 0.680  bAcc 0.599  (subjects [4, 8, 18, 20, 27, 34])
+12:39:17 INFO eegscore.validation: fold 2 AUC 0.502  bAcc 0.517  (subjects [6, 12, 15, 17, 24, 33])
+12:39:17 INFO eegscore.validation: fold 3 AUC 0.482  bAcc 0.472  (subjects [1, 5, 9, 16, 23, 32])
+12:39:18 INFO eegscore.validation: fold 4 AUC 0.529  bAcc 0.508  (subjects [3, 7, 13, 22, 30, 31])
+12:39:18 INFO eegscore.validation: fold 5 AUC 0.583  bAcc 0.595  (subjects [0, 2, 11, 21, 25, 29])
+12:39:18 INFO eegscore.validation: fold 0 AUC 0.545  bAcc 0.536  (subjects [10, 14, 19, 26, 28, 35])
+12:39:19 INFO eegscore.validation: fold 1 AUC 0.475  bAcc 0.480  (subjects [4, 8, 18, 20, 27, 34])
+12:39:19 INFO eegscore.validation: fold 2 AUC 0.532  bAcc 0.527  (subjects [6, 12, 15, 17, 24, 33])
+12:39:19 INFO eegscore.validation: fold 3 AUC 0.488  bAcc 0.496  (subjects [1, 5, 9, 16, 23, 32])
+12:39:19 INFO eegscore.validation: fold 4 AUC 0.564  bAcc 0.535  (subjects [3, 7, 13, 22, 30, 31])
+12:39:20 INFO eegscore.validation: fold 5 AUC 0.283  bAcc 0.335  (subjects [0, 2, 11, 21, 25, 29])
+12:39:20 INFO eegscore.validation: fold 0 AUC 0.741  bAcc 0.703  (subjects [10, 14, 19, 26, 28, 35])
+12:39:20 INFO eegscore.validation: fold 1 AUC 0.515  bAcc 0.483  (subjects [4, 8, 18, 20, 27, 34])
+12:39:21 INFO eegscore.validation: fold 2 AUC 0.414  bAcc 0.427  (subjects [6, 12, 15, 17, 24, 33])
+12:39:21 INFO eegscore.validation: fold 3 AUC 0.530  bAcc 0.536  (subjects [1, 5, 9, 16, 23, 32])
+12:39:21 INFO eegscore.validation: fold 4 AUC 0.514  bAcc 0.490  (subjects [3, 7, 13, 22, 30, 31])
+12:39:21 INFO eegscore.validation: fold 5 AUC 0.721  bAcc 0.678  (subjects [0, 2, 11, 21, 25, 29])
+12:39:22 INFO eegscore.validation: fold 0 AUC 0.466  bAcc 0.482  (subjects [10, 14, 19, 26, 28, 35])
+12:39:22 INFO eegscore.validation: fold 1 AUC 0.628  bAcc 0.580  (subjects [4, 8, 18, 20, 27, 34])
+12:39:22 INFO eegscore.validation: fold 2 AUC 0.686  bAcc 0.614  (subjects [6, 12, 15, 17, 24, 33])
+12:39:23 INFO eegscore.validation: fold 3 AUC 0.527  bAcc 0.513  (subjects [1, 5, 9, 16, 23, 32])
+12:39:23 INFO eegscore.validation: fold 4 AUC 0.479  bAcc 0.490  (subjects [3, 7, 13, 22, 30, 31])
+12:39:23 INFO eegscore.validation: fold 5 AUC 0.404  bAcc 0.406  (subjects [0, 2, 11, 21, 25, 29])
+12:39:24 INFO eegscore.validation: fold 0 AUC 0.611  bAcc 0.580  (subjects [10, 14, 19, 26, 28, 35])
+12:39:24 INFO eegscore.validation: fold 1 AUC 0.353  bAcc 0.378  (subjects [4, 8, 18, 20, 27, 34])
+12:39:24 INFO eegscore.validation: fold 2 AUC 0.489  bAcc 0.490  (subjects [6, 12, 15, 17, 24, 33])
+12:39:24 INFO eegscore.validation: fold 3 AUC 0.320  bAcc 0.387  (subjects [1, 5, 9, 16, 23, 32])
+12:39:25 INFO eegscore.validation: fold 4 AUC 0.275  bAcc 0.356  (subjects [3, 7, 13, 22, 30, 31])
+12:39:25 INFO eegscore.validation: fold 5 AUC 0.410  bAcc 0.407  (subjects [0, 2, 11, 21, 25, 29])
+12:39:25 INFO eegscore.validation: fold 0 AUC 0.228  bAcc 0.265  (subjects [10, 14, 19, 26, 28, 35])
+12:39:26 INFO eegscore.validation: fold 1 AUC 0.402  bAcc 0.434  (subjects [4, 8, 18, 20, 27, 34])
+12:39:26 INFO eegscore.validation: fold 2 AUC 0.504  bAcc 0.506  (subjects [6, 12, 15, 17, 24, 33])
+12:39:26 INFO eegscore.validation: fold 3 AUC 0.458  bAcc 0.476  (subjects [1, 5, 9, 16, 23, 32])
+12:39:26 INFO eegscore.validation: fold 4 AUC 0.453  bAcc 0.466  (subjects [3, 7, 13, 22, 30, 31])
+12:39:27 INFO eegscore.validation: fold 5 AUC 0.352  bAcc 0.423  (subjects [0, 2, 11, 21, 25, 29])
+12:39:27 INFO eegscore.train: permutation p = 0.048 (null mean 0.465, max 0.577)
+12:39:27 INFO eegscore.train: == deep model (eegnet), 6-fold subject-wise CV
+12:40:57 INFO eegscore.validation: fold 0 AUC 0.958  bAcc 0.888  (subjects [10, 14, 19, 26, 28, 35])
+12:42:15 INFO eegscore.validation: fold 1 AUC 0.934  bAcc 0.854  (subjects [4, 8, 18, 20, 27, 34])
+12:43:34 INFO eegscore.validation: fold 2 AUC 0.901  bAcc 0.835  (subjects [6, 12, 15, 17, 24, 33])
+12:44:52 INFO eegscore.validation: fold 3 AUC 0.874  bAcc 0.662  (subjects [1, 5, 9, 16, 23, 32])
+12:46:13 INFO eegscore.validation: fold 4 AUC 0.788  bAcc 0.723  (subjects [3, 7, 13, 22, 30, 31])
+12:47:31 INFO eegscore.validation: fold 5 AUC 0.766  bAcc 0.673  (subjects [0, 2, 11, 21, 25, 29])
+12:47:33 INFO eegscore.train: deep model (eegnet): OOF AUC 0.858 [0.804, 0.906]  bAcc 0.774  recording AUC 0.913  recording acc 0.833
+12:47:33 INFO eegscore.train: late fusion AUC 0.929
+  warnings.warn(
+12:49:13 INFO eegscore.train: after calibration: bAcc 0.830  recording acc 0.917
+12:49:13 INFO eegscore.train: done in 676s -> D:\Projects\eeg-cognitive-scoring\artifacts
+{
+  "feature_model": {
+    "auc": 0.9146484397442921,
+    "balanced_accuracy": 0.8071407505008062,
+    "brier": 0.13508095522052804,
+    "auc_ci95": [
+      0.8867848037733079,
+      0.9410647673015511
+    ],
+    "recording_auc": 0.9822530864197532,
+    "recording_accuracy": 0.875,
+    "permutation_test": {
+      "observed_auc": 0.9146484397442921,
+      "null_mean": 0.4646816503684107,
+      "null_max": 0.577378287900526,
+      "p_value": 0.047619047619047616,
+      "n_perm": 20
+    },
+    "brier_after_calibration": 0.11467337229263538
+  },
+  "feature_model_absolute_ablation": {
+    "auc": 0.7445610332504721,
+    "balanced_accuracy": 0.6988200889385972,
+    "brier": 0.2142692081356728,
+    "auc_ci95": [
+      0.6664259274372323,
+      0.816442346281473
+    ],
+    "recording_auc": 0.7808641975308642,
+    "recording_accuracy": 0.75
+  },
+  "deep_model": {
+    "auc": 0.8584365268750072,
+    "balanced_accuracy": 0.7740147618153892,
+    "brier": 0.16217209173598285,
+    "auc_ci95": [
+      0.8044147936552017,
+      0.906400861867845
+    ],
+    "recording_auc": 0.9128086419753086,
+    "recording_accuracy": 0.8333333333333334,
+    "arch": "eegnet"
+  },
+  "fusion_auc": 0.9293250318869001,
+  "shap_by_family": {
+    "logpow": 3.0543,
+    "relpow": 1.485,
+    "hjorth": 0.4714,
+    "aperiodic": 0.4686,
+    "spectral_entropy": 0.1189,
+    "ratio": 0.0185,
+    "plv": 0.0179,
+    "asym": 0.0029,
+    "engagement": 0.0
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "score": 95.72649572649573,
+  "score_iqr": [
+    89.47368421052632,
+    95.94594594594594
+  ],
+  "n_windows": 30,
+  "fraction_confident_windows": 1.0,
+  "label": "high_load",
+  "confidence": "high",
+  "quality_flags": [],
+  "window_scores": [
+    97.8,
+    95.9,
+    97.8,
+    95.9,
+    95.7,
+    89.6,
+    "..."
+  ],
+  "windows_rejected": 0,
+  "baseline_windows": 29,
+  "drift": {
+    "status": "ok",
+    "top": [
+      {
+        "feature": "hjorth_complexity_T5",
+        "mean_shift_z": 3.5
+      },
+      {
+        "feature": "gamma_logpow_Cz",
+        "mean_shift_z": 3.15
+      }
+    ]
+  },
+  "model_version": "0.1.0",
+  "latency_ms": 488.7
+}
