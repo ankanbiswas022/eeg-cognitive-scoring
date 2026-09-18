@@ -1,0 +1,33 @@
+[project]
+name = "eegscore"
+version = "0.1.0"
+description = "Production-style EEG cognitive-load / stress-state scoring pipeline (MNE + scikit-learn + PyTorch + FastAPI)"
+authors = [{ name = "Ankan Biswas", email = "ankanbiswas022@gmail.com" }]
+requires-python = ">=3.11"
+readme = "README.md"
+dependencies = [
+  "mne>=1.6", "numpy", "scipy", "pandas", "scikit-learn>=1.4", "lightgbm",
+  "torch", "matplotlib", "pyyaml", "joblib", "shap",
+  "fastapi", "uvicorn", "pydantic>=2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "httpx"]
+
+[project.scripts]
+eegscore-train = "eegscore.train:main"
+eegscore-serve = "eegscore.serve.app:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

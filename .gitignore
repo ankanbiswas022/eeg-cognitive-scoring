@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+data/raw/
+artifacts/*.pt
+artifacts/*.joblib
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
