@@ -14,8 +14,8 @@ def test_subject_cv_never_mixes_subjects(small_dataset):
     # encode the subject id into the "prediction" so we can recover which subjects were
     # in each test fold and check they never appear in the corresponding train fold
     def fp(Xtr, ytr, Xte):
-        tr_ids = {int(round(v)) for v in Xtr[:, 0, 0]}
-        te_ids = {int(round(v)) for v in Xte[:, 0, 0]}
+        tr_ids = {round(v) for v in Xtr[:, 0, 0]}
+        te_ids = {round(v) for v in Xte[:, 0, 0]}
         assert tr_ids.isdisjoint(te_ids)
         return np.full(len(Xte), 0.5)
 

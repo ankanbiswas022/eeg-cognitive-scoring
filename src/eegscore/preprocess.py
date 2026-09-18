@@ -28,7 +28,7 @@ class PreprocessParams:
     flat_threshold_uv: float = 0.5
 
     @classmethod
-    def from_config(cls, cfg: dict) -> "PreprocessParams":
+    def from_config(cls, cfg: dict) -> PreprocessParams:
         pcfg, dcfg = cfg["preprocess"], cfg["data"]
         return cls(
             l_freq=pcfg["l_freq"], h_freq=pcfg["h_freq"], notch=pcfg.get("notch"),
@@ -69,7 +69,7 @@ def window_raw(raw: mne.io.BaseRaw, window_sec: float, step_sec: float, p: Prepr
     callers can report rejection rates.
     """
     sf = raw.info["sfreq"]
-    n_win, n_step = int(round(window_sec * sf)), int(round(step_sec * sf))
+    n_win, n_step = round(window_sec * sf), round(step_sec * sf)
     data = raw.get_data()                     # (n_ch, n_samples) Volts
     starts = np.arange(0, data.shape[1] - n_win + 1, n_step)
     if len(starts) == 0:

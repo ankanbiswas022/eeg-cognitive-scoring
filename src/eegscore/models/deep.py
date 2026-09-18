@@ -17,8 +17,8 @@ from dataclasses import dataclass
 
 import numpy as np
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
+from torch import nn
 
 log = logging.getLogger(__name__)
 
@@ -114,7 +114,7 @@ class TorchClassifier:
     def _normalise(self, X):
         return (X / self.scale_).astype(np.float32)
 
-    def fit(self, X: np.ndarray, y: np.ndarray, X_val=None, y_val=None) -> "TorchClassifier":
+    def fit(self, X: np.ndarray, y: np.ndarray, X_val=None, y_val=None) -> TorchClassifier:
         torch.manual_seed(self.seed)
         np.random.seed(self.seed)
         self.scale_ = np.median(np.abs(X)) * 1.4826 + 1e-12          # MAD-based global scale

@@ -1,4 +1,3 @@
-import json
 
 import numpy as np
 import pandas as pd
@@ -49,6 +48,7 @@ def test_feature_reference_drift_report(tmp_path):
 
 def test_api_health_without_model(tmp_path, monkeypatch):
     from fastapi.testclient import TestClient
+
     import eegscore.serve.app as appmod
     monkeypatch.setattr(appmod, "ART", tmp_path)
     monkeypatch.setattr(appmod, "_bundle", None)

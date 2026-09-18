@@ -8,11 +8,11 @@ readme = "README.md"
 dependencies = [
   "mne>=1.6", "numpy", "scipy", "pandas", "scikit-learn>=1.4", "lightgbm",
   "torch", "matplotlib", "pyyaml", "joblib", "shap",
-  "fastapi", "uvicorn", "pydantic>=2",
+  "fastapi", "uvicorn", "pydantic>=2", "python-multipart",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest", "ruff", "httpx"]
+dev = ["pytest", "ruff", "httpx", "requests"]
 
 [project.scripts]
 eegscore-train = "eegscore.train:main"

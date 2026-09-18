@@ -166,3 +166,50 @@ def feature_family(name: str) -> str:
         if fam in name:
             return fam
     return "other"
+
+
+# ----------------------------------------------------------------- baseline-relative
+@dataclass
+class BaselineStats:
+    """Per-feature mean/std from a person's own calibration (rest) windows.
+
+    Scoring *relative to the person's own baseline* removes the dominant source of
+    between-subject variance in EEG (skull thickness, electrode impedance, individual alpha
+    amplitude) that otherwise swamps the within-subject state change. In the product this
+    is a 1-minute eyes-closed calibration at the start of a session. Statistically it is the
+    same principle as my neurofeedback finding: the informative quantity is the deviation
+    from the individual's resting state, not the absolute level.
+    """
+    mean: pd.Series
+    std: pd.Series
+
+    @classmethod
+    def fit(cls, F_baseline: pd.DataFrame, min_windows: int = 3) -> BaselineStats:
+        if len(F_baseline) < min_windows:
+            raise ValueError(f"need >= {min_windows} baseline windows, got {len(F_baseline)}")
+        return cls(F_baseline.mean(), F_baseline.std(ddof=1).fillna(0) + 1e-9)
+
+    def transform(self, F: pd.DataFrame) -> pd.DataFrame:
+        return (F - self.mean) / self.std
+
+    def to_dict(self) -> dict:
+        return {"mean": self.mean.to_dict(), "std": self.std.to_dict()}
+
+    @classmethod
+    def from_dict(cls, d: dict) -> BaselineStats:
+        return cls(pd.Series(d["mean"]), pd.Series(d["std"]))
+
+
+def baseline_normalise(F: pd.DataFrame, groups: np.ndarray, baseline_mask: np.ndarray
+                       ) -> pd.DataFrame:
+    """Z-score every window of each subject with that subject's own baseline statistics.
+
+    Rows with ``baseline_mask`` are used only to *fit* the statistics; they are returned
+    normalised too (for inspection) but should be excluded from model fitting.
+    """
+    Z = F.copy()
+    for g in np.unique(groups):
+        m = groups == g
+        stats = BaselineStats.fit(F[m & baseline_mask])
+        Z.loc[m] = stats.transform(F[m]).to_numpy()
+    return Z

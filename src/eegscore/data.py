@@ -37,15 +37,26 @@ class WindowedDataset:
     ch_names: list[str]
     sfreq: float
     meta: pd.DataFrame = field(default_factory=pd.DataFrame)   # per-window metadata
+    baseline: np.ndarray | None = None  # (n_windows,) bool: calibration windows, never scored
+
+    def __post_init__(self):
+        if self.baseline is None:
+            self.baseline = np.zeros(len(self.y), dtype=bool)
 
     def __len__(self) -> int:
         return len(self.y)
 
+    @property
+    def scored(self) -> np.ndarray:
+        """Mask of windows that carry a label to learn from (i.e. not calibration)."""
+        return ~self.baseline
+
     def summary(self) -> str:
         n_subj = len(np.unique(self.groups))
-        return (f"{len(self)} windows | {self.X.shape[1]} ch x {self.X.shape[2]} samples "
-                f"@ {self.sfreq:g} Hz | {n_subj} subjects | positive fraction "
-                f"{np.mean(self.y):.2f}")
+        s = self.scored
+        return (f"{int(s.sum())} scored + {int((~s).sum())} baseline windows | "
+                f"{self.X.shape[1]} ch x {self.X.shape[2]} samples @ {self.sfreq:g} Hz | "
+                f"{n_subj} subjects | positive fraction {np.mean(self.y[s]):.2f}")
 
 
 def list_subjects(raw_dir: Path) -> list[str]:
@@ -90,20 +101,29 @@ def build_dataset(cfg: dict, subjects: list[str] | None = None,
         raise FileNotFoundError(f"No Subject*_?.edf files found in {raw_dir}")
 
     params = PreprocessParams.from_config(cfg)
-    Xs, ys, gs, metas = [], [], [], []
+    baseline_sec = float(dcfg.get("baseline_seconds") or 0.0)
+    Xs, ys, gs, bs, metas = [], [], [], [], []
     ch_names, sfreq = None, None
     for sid in subjects:
         subj_num = int(re.sub(r"\D", "", sid))
-        for suffix, label in ((REST_SUFFIX, 0), (TASK_SUFFIX, 1)):
+        # (segment name, file suffix, label, is_baseline)
+        segments = [("rest", REST_SUFFIX, 0, False), ("task", TASK_SUFFIX, 1, False)]
+        if baseline_sec > 0:
+            segments.insert(0, ("baseline", REST_SUFFIX, 0, True))
+        for name, suffix, label, is_base in segments:
             f = raw_dir / f"{sid}{suffix}.edf"
-            if not f.exists():
-                log.warning("missing %s", f)
+            if not f.exists() or f.stat().st_size < 10_000:
+                log.warning("missing or truncated %s", f)
                 continue
             raw = read_edf(f, dcfg.get("drop_channels"), dcfg.get("eeg_channels_only", True))
-            if label == 0 and dcfg.get("rest_minutes_used"):
+            tmax = raw.times[-1]
+            if is_base:
+                # calibration segment: the *start* of the rest recording
+                raw.crop(tmin=0.0, tmax=min(baseline_sec, tmax))
+            elif label == 0 and dcfg.get("rest_minutes_used"):
+                # scored rest windows: the *end* of the rest recording (disjoint from baseline)
                 keep = dcfg["rest_minutes_used"] * 60.0
-                tmax = raw.times[-1]
-                raw.crop(tmin=max(0.0, tmax - keep), tmax=tmax)
+                raw.crop(tmin=max(baseline_sec, tmax - keep), tmax=tmax)
             raw = preprocess_raw(raw, params)
             X, kept = window_raw(raw, dcfg["window_sec"], dcfg["step_sec"], params)
             if ch_names is None:
@@ -111,13 +131,14 @@ def build_dataset(cfg: dict, subjects: list[str] | None = None,
             Xs.append(X)
             ys.append(np.full(len(X), label))
             gs.append(np.full(len(X), subj_num))
-            metas.append(pd.DataFrame({"subject": sid, "label": label,
+            bs.append(np.full(len(X), is_base))
+            metas.append(pd.DataFrame({"subject": sid, "segment": name, "label": label,
                                        "window_idx": np.arange(len(X)),
                                        "n_rejected": int(len(kept) - kept.sum())}))
-            log.info("%s label=%d -> %d windows (%d rejected)", sid, label, len(X),
+            log.info("%s %-8s -> %d windows (%d rejected)", sid, name, len(X),
                      len(kept) - kept.sum())
     X = np.concatenate(Xs).astype(np.float32)
     ds = WindowedDataset(X, np.concatenate(ys), np.concatenate(gs), ch_names, sfreq,
-                         pd.concat(metas, ignore_index=True))
+                         pd.concat(metas, ignore_index=True), baseline=np.concatenate(bs))
     log.info("dataset: %s", ds.summary())
     return ds

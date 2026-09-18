@@ -9,12 +9,11 @@ All splits here use ``GroupKFold`` on subject id, and the headline number is the
 from __future__ import annotations
 
 import logging
+from collections.abc import Callable
 from dataclasses import dataclass, field
-from typing import Callable
 
 import numpy as np
-from sklearn.metrics import (balanced_accuracy_score, brier_score_loss, f1_score,
-                             roc_auc_score)
+from sklearn.metrics import balanced_accuracy_score, brier_score_loss, f1_score, roc_auc_score
 from sklearn.model_selection import GroupKFold
 
 log = logging.getLogger(__name__)
@@ -34,8 +33,8 @@ class CVResult:
             "balanced_accuracy": float(balanced_accuracy_score(self.y, pred)),
             "f1": float(f1_score(self.y, pred)),
             "brier": float(brier_score_loss(self.y, self.oof_prob)),
-            "n_windows": int(len(self.y)),
-            "n_subjects": int(len(np.unique(self.groups))),
+            "n_windows": len(self.y),
+            "n_subjects": len(np.unique(self.groups)),
         }
 
     def per_subject_accuracy(self) -> dict[int, float]:
@@ -58,7 +57,7 @@ class CVResult:
         probs, ys = np.array(probs), np.array(ys)
         return {"recording_auc": float(roc_auc_score(ys, probs)),
                 "recording_accuracy": float(((probs >= 0.5) == ys).mean()),
-                "n_recordings": int(len(ys))}
+                "n_recordings": len(ys)}
 
 
 def subject_cv(fit_predict: Callable[[np.ndarray, np.ndarray, np.ndarray], np.ndarray],

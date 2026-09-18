@@ -24,7 +24,8 @@ EDF / stream ──> preprocess_array ──> windows (4 s, 50 % overlap)
                      │                      │
                      │                      └─> FeatureExtractor (~300 features)
                      │                              │
-                     │                              ├─> FeatureReference.drift_report (PSI)
+                     │                              ├─> BaselineStats (per-person calibration z-score)
+                     │                              ├─> drift check (mean shift; PSI in aggregate)
                      │                              │
                      │                              └─> LightGBM ──> p(window)
                      │                                                 │
@@ -75,14 +76,17 @@ validation.
 * Features are robust by construction (log powers, relative powers, ratios) and the
   scaler/imputer are fitted inside the CV loop.
 * Training-time augmentation for the deep model (Gaussian noise); MAD-based scaling.
+* Per-person calibration (section 9) removes subject/headset amplitude differences by
+  construction.
 * Next steps for a real deployment: per-device calibration sessions (headset-specific
   reference), ICA/ASR artefact handling for eye blinks, and subject-specific baselines
   (score relative to a person's own rest).
 
 ## 6. Monitoring and continuous improvement
 
-* **Feature drift**: PSI of every feature against the training histogram, returned with
-  each response and logged. Alert if >20 % of features exceed PSI 0.25.
+* **Feature drift**: PSI of every feature against the training histogram, computed by the
+  monitoring job over aggregated traffic (per device / week); each response carries a
+  cheaper mean-shift indicator. Alert if >20 % of features exceed PSI 0.25.
 * **Prediction drift**: distribution of scores and of the "confidence" field per device
   / site / week.
 * **Quality-flag rate**: fraction of windows rejected per device; a rising rate usually
@@ -106,3 +110,32 @@ inference. Batch scoring of EDF files is the same code behind `/score/edf`.
    load dynamics rather than treating windows as i.i.d.
 3. Domain adaptation across headsets (Euclidean alignment / covariance re-centering).
 4. Conformal prediction for per-recording uncertainty instead of the margin heuristic.
+
+## 9. The decision that mattered most: score relative to the person's own baseline
+
+The first end-to-end run used absolute features and got a subject-wise OOF AUC of ~0.6:
+barely above chance, and SHAP showed the model leaning on absolute delta/gamma power at
+Fp1, i.e. subject identity and eye/muscle artefact rather than cognition. Between-subject
+variance in EEG (skull, impedance, individual alpha amplitude) is an order of magnitude
+larger than the within-subject state change we want to detect.
+
+The fix is a product decision as much as a modelling one: every session starts with a
+short eyes-closed **calibration** segment, and all features are z-scored against that
+person's calibration statistics (`features.baseline_relative`). In training the first
+60 s of each rest recording is the calibration segment and the *last* 60 s are the scored
+rest windows, so calibration and scored data never overlap. The service enforces the same
+contract: it refuses to score without a baseline instead of returning a misleading number.
+
+| features | OOF AUC (20 subjects) | recording AUC |
+|---|---|---|
+| absolute | 0.58 | 0.58 |
+| baseline-relative | 0.88 | 0.99 |
+
+This is the same principle as the state-dependence result in my neurofeedback work: the
+informative quantity is the deviation from an individual's resting state, not the level.
+It also makes the score robust to headset and impedance differences *by construction*,
+which is the single biggest generalisation problem for consumer EEG.
+
+Monitoring note: PSI is computed by the aggregate monitoring job over many sessions; a
+single request reports the session's mean shift from the training distribution instead,
+because ~30 windows cannot populate a 10-bin histogram.

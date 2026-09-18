@@ -13,7 +13,8 @@ serial subtraction (60 s). Recorded in a laboratory with a research amplifier.
 
 ## Model
 Champion: LightGBM on ~300 interpretable spectral / aperiodic / asymmetry / connectivity
-features computed on 4-s windows (50 % overlap). Isotonic calibration on out-of-fold
+features computed on 4-s windows (50 % overlap), each z-scored against the person's own
+60-s eyes-closed calibration segment (baseline-relative). Isotonic calibration on out-of-fold
 probabilities. Challenger: EEGNet on raw windows (PyTorch).
 
 ## Evaluation
@@ -26,6 +27,8 @@ recording-level label permutation test. See `artifacts/metrics.json`.
 * "Cognitive load" is operationalised as mental arithmetic; stress was not independently
   measured (no cortisol / self-report / HRV in the labels).
 * Both conditions are eyes-closed; eyes-open use requires re-validation.
+* A 60-s eyes-closed calibration segment is **required** at inference; without it the
+  service refuses to score.
 * Rest windows are drawn from the final minute of a 3-min rest to balance classes; the
   first two minutes are unused.
 

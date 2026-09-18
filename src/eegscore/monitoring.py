@@ -64,7 +64,7 @@ class FeatureReference:
     stds: dict[str, float] = field(default_factory=dict)
 
     @classmethod
-    def fit(cls, F: pd.DataFrame, n_bins: int = 10) -> "FeatureReference":
+    def fit(cls, F: pd.DataFrame, n_bins: int = 10) -> FeatureReference:
         ref = cls()
         for c in F.columns:
             v = F[c].to_numpy(dtype=float)
@@ -96,5 +96,5 @@ class FeatureReference:
         Path(path).write_text(json.dumps(self.__dict__))
 
     @classmethod
-    def from_json(cls, path: str | Path) -> "FeatureReference":
+    def from_json(cls, path: str | Path) -> FeatureReference:
         return cls(**json.loads(Path(path).read_text()))

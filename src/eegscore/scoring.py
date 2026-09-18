@@ -28,7 +28,7 @@ class Scorer:
     _x: np.ndarray | None = field(default=None, repr=False)
     _y: np.ndarray | None = field(default=None, repr=False)
 
-    def fit(self, oof_prob: np.ndarray, y: np.ndarray) -> "Scorer":
+    def fit(self, oof_prob: np.ndarray, y: np.ndarray) -> Scorer:
         if self.calibration == "isotonic":
             self._iso = IsotonicRegression(out_of_bounds="clip", y_min=0.0, y_max=1.0)
             self._iso.fit(oof_prob, y)
@@ -53,7 +53,7 @@ class Scorer:
         return {
             "score": float(np.median(s)),
             "score_iqr": [float(np.percentile(s, 25)), float(np.percentile(s, 75))],
-            "n_windows": int(len(s)),
+            "n_windows": len(s),
             "fraction_confident_windows": conf,
             "label": "high_load" if np.median(p) >= 0.5 else "rest",
             "confidence": "high" if conf >= 0.7 else "medium" if conf >= 0.4 else "low",
@@ -69,7 +69,7 @@ class Scorer:
         Path(path).write_text(json.dumps(d, indent=2))
 
     @classmethod
-    def from_json(cls, path: str | Path) -> "Scorer":
+    def from_json(cls, path: str | Path) -> Scorer:
         d = json.loads(Path(path).read_text())
         obj = cls(d["score_min"], d["score_max"], d["low_confidence_margin"], d["calibration"])
         if d["x"] is not None:
