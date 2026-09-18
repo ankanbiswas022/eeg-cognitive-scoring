@@ -1,6 +1,14 @@
 # eeg-cognitive-scoring
 
+[![ci](https://github.com/ankanbiswas022/eeg-cognitive-scoring/actions/workflows/ci.yml/badge.svg)](https://github.com/ankanbiswas022/eeg-cognitive-scoring/actions/workflows/ci.yml)
+![python](https://img.shields.io/badge/python-3.11-blue)
+![pytorch](https://img.shields.io/badge/PyTorch-CPU-ee4c2c)
+![mne](https://img.shields.io/badge/MNE-1.x-2b7bba)
+![license](https://img.shields.io/badge/license-MIT-green)
+
 **From raw EEG to a calibrated, monitored cognitive-load score, served over an API.**
+
+<p align="center"><img src="reports/results_overview.png" width="95%"></p>
 
 A production-style pipeline that turns multichannel EEG into a 0–100 cognitive-load /
 stress-state score. Built on the public PhysioNet *EEG During Mental Arithmetic Tasks*
